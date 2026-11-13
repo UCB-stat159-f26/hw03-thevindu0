@@ -4,7 +4,7 @@ from .errors import PlayerNotFoundError
 
 BASE = "https://www.tennisabstract.com"
 HEADERS = {"User-Agent": "tennisgap (course project)"}
-# ASSUMPTION: verify in your browser where the player's DOB appears.
+# I am making an assumption here that the player's DOB appears in the site.
 PLAYER_PAGES = ["/cgi-bin/wplayer.cgi?p={}", "/cgi-bin/player.cgi?p={}"]
 
 
@@ -18,7 +18,7 @@ def fetch_career_js(slug):
     if text is None or "morematchmx" not in text:
         raise PlayerNotFoundError(
             f"Player '{slug}' not found on tennisabstract.com. "
-            "Check the spelling, e.g. 'Serena Williams'."
+            "Please check the spelling, e.g. 'Serena Williams'."
         )
     return text
 
