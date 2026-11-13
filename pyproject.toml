@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tennis_age_gap"
+version = "0.1.0"
+description = "Fetch a player's career from tennisabstract.com and plot age vs. opponent age gap"
+requires-python = ">=3.9"
+dependencies = ["requests", "pandas", "matplotlib"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
