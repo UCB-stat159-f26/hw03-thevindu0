@@ -13,7 +13,7 @@ def get_player_matches(name):
 
 
 def plot_age_gap(matches):
-    """Scatter: player age (x) vs. player minus opponent age (y), colored by W/L."""
+    """Scatter: player age (x) vs. player minus opponent age (y), which are colored by W/L."""
     fig, ax = plt.subplots(figsize=(10, 5))
     for result, grp in matches.groupby("result"):
         ax.scatter(grp["player_age"], grp["age_diff"], s=12, alpha=0.7,
