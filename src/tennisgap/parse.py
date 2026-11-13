@@ -13,12 +13,12 @@ def extract_rows(js_text):
     return json.loads(found.group(1))
 
 
-def years_between(start, end):
-    return (end - start) / pd.Timedelta(days=365.25)
+def years_between(star, end):
+    return (end - star) / pd.Timedelta(days=365.25)
 
-
+"Women's files give opponent DOB (YYYYMMDD); men's give age directly."
 def opponent_age(match_date, raw_value):
-    """Women's files give opponent DOB (YYYYMMDD); men's give age directly."""
+
     raw = str(raw_value)
     if re.fullmatch(r"\d{8}", raw):
         return years_between(pd.to_datetime(raw, format=DATE_FMT), match_date)
