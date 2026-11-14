@@ -18,7 +18,7 @@ def years_between(start, end):
 
 
 def opponent_age(match_date, raw_value):
-    """Women's files give opponent DOB (YYYYMMDD); men's give age directly."""
+    "Women's files give opponent DOB (YYYYMMDD); and gets men's age directly."
     raw = str(raw_value)
     if re.fullmatch(r"\d{8}", raw):
         return years_between(pd.to_datetime(raw, format=DATE_FMT), match_date)
