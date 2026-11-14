@@ -7,13 +7,13 @@ COLORS = {"W": "#2a9d8f", "L": "#e76f51"}
 
 
 def get_player_matches(name):
-    """Return a tidy DataFrame of a player's career matches with ages."""
+    "Return a tidy DataFrame of a player's career matches with ages."
     slug = normalize_name(name)
     return build_matches(fetch_career_js(slug), fetch_player_dob(slug))
 
 
 def plot_age_gap(matches):
-    """Scatter: player age (x) vs. player minus opponent age (y), colored by W/L."""
+    "Scatter plot: player age (x) vs. player minus opponent age (y), colored by W/L."
     fig, ax = plt.subplots(figsize=(10, 5))
     for result, grp in matches.groupby("result"):
         ax.scatter(grp["player_age"], grp["age_diff"], s=12, alpha=0.7,
