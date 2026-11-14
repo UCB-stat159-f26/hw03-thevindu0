@@ -1,2 +1,2 @@
 class PlayerNotFoundError(ValueError):
-    """Raised when a player cannot be found on tennisabstract.com."""
+    "This function is used when input can not be found on tennisabstract.com."
